@@ -23,7 +23,7 @@
         android:id="@+id/addMemberTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add member"
+        android:text="Register"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

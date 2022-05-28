@@ -51,17 +51,17 @@ public class AddMember extends AppCompatActivity {
         firstnameField.setHintTextColor(isValid ? Color.GRAY : Color.RED);
 
         // Validate postal code
-        Pattern pcPattern = Pattern.compile("[A-Z]{1}[0-9]{1}[A-Z]{1}-[A-Z]{1}[0-9]{1}[A-Z]{1}");
+        Pattern pcPattern = Pattern.compile("[A-Z]{1}[0-9]{1}[A-Z]{1}-[0-9]{1}[A-Z]{1}[0-9]{1}");
         Matcher pcMatcher = pcPattern.matcher(postalcode);
         isValid = pcMatcher.find();
-        postalcodeField.setTextColor(isValid ? Color.BLACK : Color.RED); // Format LNL-LNL
+        postalcodeField.setTextColor(isValid ? Color.BLACK : Color.RED); // Format LNL-NLN
         postalcodeField.setHintTextColor(isValid ? Color.GRAY : Color.RED);
 
         // Submission confirmation
         TextView resultField = (TextView) findViewById(R.id.resultField);
-        resultField.setText(isValid ? "MEMBER ADDED" : "INVALID FORMAT");
+        resultField.setText(isValid ? "REGISTERED" : "INVALID FORMAT");
         resultField.setTextColor(isValid ? Color.GREEN : Color.RED);
-        resultField.setVisibility(isValid ? View.INVISIBLE : View.VISIBLE);
+        resultField.setVisibility(View.VISIBLE);
     }
 
     public void goToMainMenu(View view) {
