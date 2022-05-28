@@ -22,6 +22,15 @@ public class EditMember extends AppCompatActivity {
         TextView editMemberTitle = (TextView) findViewById(R.id.editMemberTitle);
         editMemberTitle.setText("Edit \"user\" profile"/*TODO*/);
 
+        EditText nameField = (EditText) findViewById(R.id.nameField2);
+        nameField.setText("Name"/*TODO*/);
+
+        EditText firstnameField = (EditText) findViewById(R.id.firstnameField2);
+        firstnameField.setText("First name"/*TODO*/);
+
+        EditText postalcodeField = (EditText) findViewById(R.id.postalCodeField2);
+        postalcodeField.setText("Postal code"/*TODO*/);
+
         TextView resultField = (TextView) findViewById(R.id.resultField2);
         resultField.setText("");
     }
