@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         title.setText("Welcome " + loggedUser);
 
         // TMP
-        Intent goToRegisterPage = new Intent(this, DisableMember.class);
+        Intent goToRegisterPage = new Intent(this, ViewMember.class);
         startActivity(goToRegisterPage);
     }
 }

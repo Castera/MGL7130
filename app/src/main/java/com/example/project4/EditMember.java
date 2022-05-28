@@ -16,6 +16,13 @@ public class EditMember extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // TODO: Check if user is logged in
+        boolean isLoggedIn = true;
+        if (!isLoggedIn) {
+            this.goToLogin();
+            return;
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_member);
 
@@ -77,5 +84,11 @@ public class EditMember extends AppCompatActivity {
         Intent goToMainMenuIntent = new Intent(this, MainActivity.class);
         goToMainMenuIntent.putExtra("theUser", "user" /*TODO*/);
         startActivity(goToMainMenuIntent);
+    }
+
+    public void goToLogin() {
+        Intent goToLoginIntent = new Intent(this, MainActivity.class);
+        goToLoginIntent.putExtra("theUser", "user" /*TODO*/);
+        startActivity(goToLoginIntent);
     }
 }

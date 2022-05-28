@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project4">
         <activity
+            android:name=".ViewMember"
+            android:exported="false" />
+        <activity
             android:name=".DisableMember"
             android:exported="false" />
         <activity
