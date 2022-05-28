@@ -23,7 +23,7 @@ public class EditMember extends AppCompatActivity {
         editMemberTitle.setText("Edit \"user\" profile"/*TODO*/);
 
         TextView resultField = (TextView) findViewById(R.id.resultField2);
-        resultField.setVisibility(View.INVISIBLE);
+        resultField.setText("");
     }
 
     public void update(View view) {
@@ -36,35 +36,32 @@ public class EditMember extends AppCompatActivity {
         EditText postalcodeField = (EditText) findViewById(R.id.postalCodeField2);
         String postalcode = postalcodeField.getText().toString();
 
-        boolean isValid = true;
-
         // Validate name
         Pattern namePattern = Pattern.compile("[a-z]+", Pattern.CASE_INSENSITIVE);
         Matcher nameMatcher = namePattern.matcher(name);
         // Only alphabetical caracters, min length of 1 and max length of 40 caracters
-        isValid = nameMatcher.find() && name.length() <= 40;
-        nameField.setTextColor(isValid ? Color.BLACK : Color.RED);
-        nameField.setHintTextColor(isValid ? Color.GRAY : Color.RED);
+        boolean nameIsValid = nameMatcher.find() && name.length() <= 40;
+        if (!nameIsValid)
+            nameField.setError("Invalid format");
 
         // Validate first name
         Matcher firstnameMatcher = namePattern.matcher(firstname);
         // Only alphabetical caracters, min length of 1 and max length of 40 caracters
-        isValid = isValid && firstnameMatcher.find() && firstname.length() <= 40;
-        firstnameField.setTextColor(isValid ? Color.BLACK : Color.RED);
-        firstnameField.setHintTextColor(isValid ? Color.GRAY : Color.RED);
+        boolean firstnameIsValid = firstnameMatcher.find() && firstname.length() <= 40;
+        if (!firstnameIsValid)
+            firstnameField.setError("Invalid format");
 
         // Validate postal code
         Pattern pcPattern = Pattern.compile("[A-Z]{1}[0-9]{1}[A-Z]{1}-[0-9]{1}[A-Z]{1}[0-9]{1}");
         Matcher pcMatcher = pcPattern.matcher(postalcode);
-        isValid = isValid && pcMatcher.find();
-        postalcodeField.setTextColor(isValid ? Color.BLACK : Color.RED); // Format LNL-LNL
-        postalcodeField.setHintTextColor(isValid ? Color.GRAY : Color.RED);
+        boolean postalcodeIsValid = pcMatcher.find();
+        if (!postalcodeIsValid)
+            postalcodeField.setError("Invalid format"); // Format LNL-NLN
 
         // Submission confirmation
+        boolean isValid = nameIsValid && firstnameIsValid && postalcodeIsValid;
         TextView resultField = (TextView) findViewById(R.id.resultField2);
-        resultField.setText(isValid ? "UPDATED" : "INVALID FORMAT");
-        resultField.setTextColor(isValid ? Color.GREEN : Color.RED);
-        resultField.setVisibility(View.VISIBLE);
+        resultField.setText(isValid ? "REGISTERED" : "");
     }
 
     public void goToMainMenu(View view) {
