@@ -61,7 +61,7 @@ public class EditMember extends AppCompatActivity {
         // Submission confirmation
         boolean isValid = nameIsValid && firstnameIsValid && postalcodeIsValid;
         TextView resultField = (TextView) findViewById(R.id.resultField2);
-        resultField.setText(isValid ? "REGISTERED" : "");
+        resultField.setText(isValid ? "UPDATED" : "");
     }
 
     public void goToMainMenu(View view) {
