@@ -10,6 +10,7 @@
         android:id="@+id/mainMenuButton"
         android:layout_width="192dp"
         android:layout_height="60dp"
+        android:onClick="goToMainMenu"
         android:text="Main menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +80,7 @@
         android:id="@+id/addMemberButton"
         android:layout_width="192dp"
         android:layout_height="60dp"
+        android:onClick="submit"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,4 +88,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.682" />
+
+    <TextView
+        android:id="@+id/resultField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.805" />
 </androidx.constraintlayout.widget.ConstraintLayout>

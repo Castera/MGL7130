@@ -18,5 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
         TextView title = (TextView) findViewById(R.id.MainTitle);
         title.setText("Welcome " + loggedUser);
+
+        // TMP
+        Intent goToRegisterPage = new Intent(this, AddMember.class);
+        startActivity(goToRegisterPage);
     }
 }
